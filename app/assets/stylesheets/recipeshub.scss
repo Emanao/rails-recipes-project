@@ -1,0 +1,224 @@
+/* responsive images */
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+h1,
+h2 {
+    margin-top: 25px;
+    padding-bottom: 15px;
+}
+
+.navbar-brand {}
+
+.narrow-content,
+.basic-form {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.basic-form {
+    padding: 15px;
+}
+
+.basic-form .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.basic-form .form-control:focus {
+    z-index: 2;
+}
+
+#ALAppBar {
+    height: 36px;
+    width: 100%;
+    background: #16a1e0;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #34BBFC), color-stop(1, #2CA0D7));
+    background: -webkit-linear-gradient(top, #34BBFC, #2CA0D7);
+    background: -ms-linear-gradient( top, #34BBFC 0%, #2CA0D7 100%);
+    background: -moz-linear-gradient(top, #34BBFC 0%, #2CA0D7 100%);
+    border-bottom: 1px solid #888;
+}
+
+#ALAppBar-LeftItems {
+    float: left;
+    margin-left: 8px;
+}
+
+#ALAppBar-RightItems {
+    float: right;
+}
+
+#ALAppBar-Logo {
+    margin-top: 2px;
+    width: 99px;
+    height: 30px;
+    background-image: url("/static/img/app_bar_logo.png?v=3588ce5c4cfa2bb6675c0cd11ac606ad");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and ( min-device-pixel-ratio: 1.5),
+only screen and ( min-resolution: 1.5dppx) {
+    #ALAppBar-Logo {
+        background-image: url("/static/img/app_bar_logo@2x.png?v=cc7bdd04c62faa908150a48022e047f4");
+        background-size: 99px 30px;
+    }
+}
+
+.ALAppBar-Text {
+    color: white;
+    line-height: 36px;
+    padding-left: 12px;
+    text-shadow: 0px -1px 1px #777;
+}
+
+.ALAppBar-Button {
+    float: left;
+    color: white;
+    border-left: 1px solid #20759D;
+    line-height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-shadow: 0px -1px 1px #777;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+    font-size: 16px;
+}
+
+.ALAppBar-Button:hover {
+    cursor: pointer;
+    background-color: #2CA0D7;
+}
+
+.ALAppBar-Button:active:hover {
+    background-color: #2A9ACF;
+}
+
+.ALAppBar-Form {
+    float: left;
+    color: white;
+    border-left: 1px solid #20759D;
+    padding: 0;
+}
+
+.ALAppBar-FormButton {
+    background: none;
+    border: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    float: left;
+    color: white;
+    line-height: 36px;
+    text-shadow: 0px -1px 1px #777;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #16A4E0;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #008BC7;
+}
+
+h2 {
+    padding-bottom: 0;
+}
+
+.basic-form {
+    padding-bottom: 5px;
+}
+
+.basic-form input#sign_in_email {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.basic-form input#sign_in_pwd {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.facebook-separator-text {
+    overflow: hidden;
+    text-align: center;
+    color: #777;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.facebook-separator-text:before,
+.facebook-separator-text:after {
+    background-color: #ccc;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.facebook-separator-text:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.facebook-separator-text:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+.facebook-sign-in-button {
+    background-color: #3B5998;
+    color: white;
+}
+
+.create-account-help-container {
+    margin-top: 30px;
+}
+
+.navlinks {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .navlinks li:before {
+        content: "\a0\a0|\a0\a0";
+    }
+    .navlinks .first:before {
+        content: "";
+    }
+    .navlinks {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .navlinks li {
+        font-size: 16px;
+        display: inline;
+        padding: 0px;
+    }
+}
