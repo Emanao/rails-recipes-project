@@ -1,17 +1,8 @@
 
-
-<div class="container">
-    <form class="basic-form" method="post" action="sessions/create">
-        <h4>Sign Up</h4>
-        <label for="name" class="sr-only">Name</label>
-        <input type="name" id="name" class="form-control" placeholder="Name" required="" autofocus="">
-        <label for="email" class="sr-only">Email address</label>
-        <input type="email" id="email" class="form-control" placeholder="Email address" required="" autofocus="">
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" class="form-control" placeholder="Password" required="">
-
-        <button class="btn btn-lg btn-primary btn-block " type="submit">Sign Up</button>
-        <div class="alert alert-light text-center">Have a Recipeshub account? <a href="/sessions/new"><strong>Sign In</strong></a></div>
-
-    </form>
-</div>
+<%= bootstrap_form_for  :user, url:"/signup", html: {class:"basic-form"} do |f| %>
+    <%= f.text_field :name, hide_label: true, placeholder:"Name" %>
+    <%= f.email_field :email, hide_label: true, placeholder:"Email address" %>
+    <%= f.password_field :password, hide_label: true, placeholder:"Password" %>
+    <%= f.submit "Sign Up", class:"btn-lg btn-primary btn-block" %>
+    <div class="alert alert-light text-center">Have a Recipeshub account? <a href="/login"><strong>Sign In</strong></a></div>
+<% end %>
