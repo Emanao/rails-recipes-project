@@ -1,3 +1,72 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.basic-form {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.basic-form .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.basic-form {
+    padding-bottom: 5px;
+}
+
+.basic-form input#sign_in_email {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.basic-form input#sign_in_pwd {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.facebook-separator-text {
+    overflow: hidden;
+    text-align: center;
+    color: #777;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.facebook-separator-text:before,
+.facebook-separator-text:after {
+    background-color: #ccc;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.facebook-separator-text:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.facebook-separator-text:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+.facebook-sign-in-button {
+    background-color: #3B5998;
+    color: white;
+}
+
+.create-account-help-container {
+    margin-top: 30px;
+}
