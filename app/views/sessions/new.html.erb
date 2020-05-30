@@ -1,7 +1,9 @@
 
-<%= bootstrap_form_for :user, url:"/login", html: {class:"basic-form"} do |f| %>
+<%= bootstrap_form_tag url:"/login", html: {class:"basic-form"} do |f| %>
     <%= f.email_field :email, hide_label: true, placeholder:"Email address" %>
     <%= f.password_field :password, hide_label: true, placeholder:"Password" %>
     <%= f.submit "Log In", class:"btn-lg btn-primary btn-block" %>
-     <div class="alert alert-light text-center">Don't have a Recipeshub account? <a href="/signup"><strong>Sign Up</strong></a></div> 
+     <div class="alert alert-light text-center">Don't have a Recipeshub account?
+             <%= link_to signup_path do %><strong>Sign Up</strong><% end %>
+    </div>
 <% end %>
