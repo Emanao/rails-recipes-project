@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'recipes#index'
+  root 'recipes#index'
+
+  get 'signup', to:'users#new'
+  post 'signup', to: 'users#create'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+
   resources :recipes
-  get 'users/new'
-  get 'sessions/new'
-  get 'users/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

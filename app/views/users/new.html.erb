@@ -1,8 +1,11 @@
 
-<%= bootstrap_form_for  :user, url:"/signup", html: {class:"basic-form"} do |f| %>
-    <%= f.text_field :name, hide_label: true, placeholder:"Name" %>
-    <%= f.email_field :email, hide_label: true, placeholder:"Email address" %>
-    <%= f.password_field :password, hide_label: true, placeholder:"Password" %>
+<%= bootstrap_form_for @user, url:"/signup", inline_errors: false,  html: {class:"basic-form"} do |f| %>
+    <%= f.alert_message "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved. Please fix the errors below."%>
+    <%= f.text_field :name, hide_label: true, label_as_placeholder: true %>
+    <%= f.email_field :email, hide_label: true, label_as_placeholder: true %>
+    <%= f.password_field :password, hide_label: true, label_as_placeholder: true %>
     <%= f.submit "Sign Up", class:"btn-lg btn-primary btn-block" %>
-    <div class="alert alert-light text-center">Have a Recipeshub account? <a href="/login"><strong>Sign In</strong></a></div>
+    <div class="alert text-center">Have a Recipeshub account?
+        <%= link_to login_path do %><strong>Sign In</strong><% end %>
+    </div>
 <% end %>
