@@ -21,14 +21,23 @@
     <![endif]-->
 </head>
 <body>
-    <div id="ALAppBar">
-        <div id="ALAppBar-LeftItems">
-            <a class="navbar-brand ALAppBar-Text" href="/recipes">Recipeshub</a>
-        </div>
-         <div id="ALAppBar-RightItems">
-            <a class="ALAppBar-Button" href="/sessions/new">Login/Signup</a>
-        </div>
-    </div>
+    <ul class="nav justify-content-end">
+        <li class="nav-item left-item">
+            <%= link_to 'RecipesHub', recipes_path, class: "nav-link active" %>
+        </li>
+        <% if logged_in? %>
+            <li class="nav-item right-item">
+                <%= link_to 'Logout', logout_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item right-item">
+                <%= link_to "#{current_user.name.capitalize}'s Recipes", login_path, class: "nav-link" %>
+            </li>
+        <% else %>
+            <li class="nav-item right-item">
+                <%= link_to 'SignIn/SignUp', login_path, class:"nav-link" %>
+            </li>
+        <% end %>
+    </ul>
 
     <%= yield %>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
