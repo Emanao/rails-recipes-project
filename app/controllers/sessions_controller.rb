@@ -5,10 +5,15 @@ class SessionsController < ApplicationController
     def create   
         user = User.find_by(email:params[:email])
         if user && user.authenticate(params[:password])
-            session[:ser_id] = user.id
+            session[:user_id] = user.id
             redirect_to recipes_path
         else
-            raise "user could not be found"
+            if params[:email].strip.empty? || params[:password].empty?
+                flash[:credentials_alert] = "Email or password can not be blank."
+            else
+                flash[:credentials_alert] = 'Email or password are incorrect.'
+            end
+            render :new
         end 
 
 

@@ -1,5 +1,10 @@
 
 <%= bootstrap_form_tag url:"/login", html: {class:"basic-form"} do |f| %>
+    <% if flash[:credentials_alert].present?%>
+        <div class="alert alert-danger" role="alert">
+            <%=flash[:credentials_alert]%>
+        </div>
+    <%end%>
     <%= f.email_field :email, hide_label: true, placeholder:"Email address" %>
     <%= f.password_field :password, hide_label: true, placeholder:"Password" %>
     <%= f.submit "Log In", class:"btn-lg btn-primary btn-block" %>
