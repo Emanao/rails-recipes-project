@@ -1,21 +1,21 @@
-<table class="table-responsive table table-sm">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Title</th>
-      <th scope="col">Created by</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Recipe title</td>
-      <td>Owner</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Recipe title2</td>
-      <td>Owner2</td>
-    </tr>
-  </tbody>
-</table>
+<%= my_title "Recipes" %>
+
+<div class="container">
+    <% if  @recipes.nil? %>
+        There are no recipes
+    <%else%>
+        <table class="table-responsive table table-sm">
+        <thead>
+            <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Created by</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%= render @recipes %>
+        </tbody>
+        </table>
+       
+    <%end%>
+
+</div>

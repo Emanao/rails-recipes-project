@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email:params[:email])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect_to recipes_path
+            redirect_to user_recipes_path user
         else
             if params[:email].strip.empty? || params[:password].empty?
                 flash[:credentials_alert] = "Email or password can not be blank."

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Recipeshub</title>
-
+  <title>RecipesHub</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +29,10 @@
                 <%= link_to 'Logout', logout_path, class: "nav-link" %>
             </li>
             <li class="nav-item right-item">
-                <%= link_to "#{current_user.name.capitalize}'s Recipes", login_path, class: "nav-link" %>
+                <%= link_to "#{current_user.name.capitalize}'s Recipes", user_recipes_path(current_user), class: "nav-link" %>
+            </li>
+                <li class="nav-item right-item">
+                <%= link_to 'Add Recipe', new_user_recipe_path(current_user)  , class: "nav-link" %>
             </li>
         <% else %>
             <li class="nav-item right-item">
@@ -39,7 +41,11 @@
         <% end %>
     </ul>
 
+    <div class="container">
+        <h3><%= yield :title %></h3>
+    </div>
     <%= yield %>
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
