@@ -1,21 +1,19 @@
 <%= my_title "Recipes" %>
 
 <div class="container">
-    <% if  @recipes.nil? %>
-        There are no recipes
-    <%else%>
-        <table class="table-responsive table table-sm">
-        <thead>
-            <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Created by</th>
-            </tr>
-        </thead>
-        <tbody>
-            <%= render @recipes %>
-        </tbody>
-        </table>
-       
-    <%end%>
-
+    <table class="table-responsive table table-sm">
+    <thead>
+        <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Created by</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%if @user.nil? %>
+                <%= render(@recipes) || render(html: '<tr><td>No recipes to be displayed<t/r></td'.html_safe)%>
+        <%else%>
+            <%= render(partial: 'user_recipe' , collection: @recipes , as: :recipe) || render(html: '<tr><td>No recipes to be displayed<t/r></td'.html_safe)%>
+        <%end%>
+    </tbody>
+    </table>
 </div>
