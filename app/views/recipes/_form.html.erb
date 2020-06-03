@@ -1,7 +1,7 @@
-    <%= bootstrap_form_for [@user,@recipe], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8", inline_errors: false do |f| %>
+    <%= bootstrap_form_for [user,recipe], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8", inline_errors: false do |f| %>
         <%= f.text_field :title %>
         <%= f.text_area :description %>
         <%= f.text_area :directions %>
         <%= f.text_field :servings, control_col: "col-sm-1"%>
-        <%= f.submit "Add Recipe", class:"btn-lg btn-primary" %>
+        <%= f.submit "Add", class:"btn-lg btn-primary" %>
     <% end %>
