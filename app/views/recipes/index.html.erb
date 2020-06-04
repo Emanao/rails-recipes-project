@@ -10,9 +10,9 @@
     </thead>
     <tbody>
         <%if @user.nil? %>
-                <%= render(@recipes) || render(html: '<tr><td>No recipes to be displayed<t/r></td'.html_safe)%>
+            <%= render_recipe_collection("recipe", @recipes)%>
         <%else%>
-            <%= render(partial: 'user_recipe' , collection: @recipes , as: :recipe) || render(html: '<tr><td>No recipes to be displayed<t/r></td'.html_safe)%>
+            <%= render_recipe_collection("user_recipe",@recipes) %>
         <%end%>
     </tbody>
     </table>
