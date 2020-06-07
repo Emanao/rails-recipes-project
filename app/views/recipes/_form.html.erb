@@ -1,7 +1,7 @@
      <%= bootstrap_form_for [user,recipe], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8", inline_errors: false do |f| %>
         <%= f.text_field :title %>
         <%= f.text_area :description %>
-        <%= f.fields_for :ingredients_attributes, recipe.ingredients do |i|%>
+        <%= f.fields_for :ingredients_attributes do |i|%>
             <%= i.text_area :name, label: "Ingredients", help: "Each line must contain the amount and the ingredient to be added separated by a comma. E.g.: 1 pinch, salt" %>
         <%end%>
         <%= f.text_area :directions, help: "Each step must be in a different line"%>
