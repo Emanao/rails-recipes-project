@@ -1,14 +1,21 @@
 
-<%= bootstrap_form_tag url:"/login", html: {class:"basic-form"} do |f| %>
-    <% if flash[:credentials_alert].present?%>
-        <div class="alert alert-danger" role="alert">
-            <%=flash[:credentials_alert]%>
-        </div>
-    <%end%>
-    <%= f.email_field :email, hide_label: true, placeholder:"Email address" %>
-    <%= f.password_field :password, hide_label: true, placeholder:"Password" %>
-    <%= f.submit "Log In", class:"btn-lg btn-primary btn-block" %>
-     <div class="alert alert-light text-center">Don't have a Recipeshub account?
-             <%= link_to signup_path do %><strong>Sign Up</strong><% end %>
+<div class="basic-form">
+    <%= bootstrap_form_tag url:"/login" do |f| %>
+        <% if flash[:credentials_alert].present?%>
+            <div class="alert alert-danger" role="alert">
+                <%=flash[:credentials_alert]%>
+            </div>
+        <%end%>
+        <%= f.email_field :email, hide_label: true, placeholder:"Email address" %>
+        <%= f.password_field :password, hide_label: true, placeholder:"Password" %>
+        <%= f.submit "Log In", class:"btn-lg btn-primary btn-block" %>
+    <% end %>
+
+    <div class="alert alert-light text-center">Don't have a Recipeshub account?
+        <%= link_to signup_path do %><strong>Sign Up</strong><% end %>
     </div>
-<% end %>
+    <div class="facebook-separator-text"><i>or</i></div>       
+    <div class="text-center social-btn">
+        <a href="/auth/facebook" class="btn-lg btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+    </div>
+</div>
