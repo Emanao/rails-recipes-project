@@ -24,14 +24,25 @@ class RecipesController < ApplicationController
             end
         end
     end
+    def edit
+        @user = User.find_by(id: params[:user_id]) if params[:user_id].present?
+        if @user
+            @recipe = @user.recipes.find(params[:id])
+        end
+    end
     def show
         @recipe = Recipe.find(params[:id])
         @user = @recipe.user
     end
-    def edit
+    def update
         user = User.find_by(id: params[:user_id]) if params[:user_id].present?
         if user
-            recipe = user.recipes.find(params[:id])
+            recipe = user.recipes.find_by(id:params[:id])
+            if recipe.update(recipe_params)
+                redirect_to user_recipes_path(user)
+            else
+                raise params.inspect
+            end
         end
     end
     def destroy

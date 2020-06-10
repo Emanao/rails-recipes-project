@@ -1,0 +1,5 @@
+<%= my_title "Edit your Recipe" %>
+
+<div class="container">
+     <%= render partial: "form", locals: {user: @user, recipe: @recipe, ingredient: @ingredient}%>
+</div>

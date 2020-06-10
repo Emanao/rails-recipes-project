@@ -1,5 +1,6 @@
  <tr>
     <td><%= link_to "#{recipe.title}", recipe_path(recipe) %></td>
     <td><%=recipe.user.name%></td> 
+    <td><%= link_to "Edit", edit_user_recipe_path(recipe.user, recipe) %></td>
     <td><%= link_to "Delete", user_recipe_path(recipe.user, recipe), method: :delete %></td>
 </tr>

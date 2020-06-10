@@ -2,9 +2,9 @@
         <%= f.text_field :title %>
         <%= f.text_area :description %>
         <%= f.fields_for :ingredients_attributes do |i|%>
-            <%= i.text_area :name, label: "Ingredients", help: "Each line must contain the amount and the ingredient to be added separated by a comma. E.g.: 1 pinch, salt" %>
+            <%= i.text_area :name, value:recipe.ingredients_for_textarea, help: "Each ingredient must be in a different line "%>
         <%end%>
         <%= f.text_area :directions, help: "Each step must be in a different line"%>
         <%= f.text_field :servings, control_col: "col-sm-1"%>
-        <%= f.submit "Add", class:"btn-lg btn-primary" %>
+        <%= f.submit class:"btn-lg btn-primary" %>
     <% end %>
